@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import Button from '@/components/Button.vue'
 import { Menu, X } from 'lucide-vue-next'
 const navLinks = ref([
@@ -8,9 +8,27 @@ const navLinks = ref([
   { href: '#experience', label: 'Experience' },
 ])
 const isMobileMenuOpen = ref(false)
+const isScrolled = ref(false)
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 <template>
-  <header class="fixed top-0 right-0 left-0 bg-transparent py-5">
+  <header
+    :class="[
+      'fixed top-0 left-0 right-0 transition-all duration-500 z-50',
+      isScrolled ? 'glass-strong py-3' : 'bg-transparent py-5',
+    ]"
+  >
     <nav class="container mx-auto px-6 flex items-center justify-between">
       <!-- Logo -->
       <a href="#" class="text-xl font-bold tracking-tight hover:text-primary">
@@ -35,10 +53,12 @@ const isMobileMenuOpen = ref(false)
         <Button size="sm" class-name="hidden md:block"> Contact Me </Button>
       </div>
       <!-- Mobile Button -->
-      <button class="md:hidden p-2 text-foreground cursor-pointer" @click="isMobileMenuOpen = !isMobileMenuOpen">
-
+      <button
+        class="md:hidden p-2 text-foreground cursor-pointer"
+        @click="isMobileMenuOpen = !isMobileMenuOpen"
+      >
         <Menu :size="24" v-if="!isMobileMenuOpen" />
-        <X :size="24" v-else/>
+        <X :size="24" v-else />
       </button>
     </nav>
     <!-- Mobile menu -->
@@ -53,7 +73,7 @@ const isMobileMenuOpen = ref(false)
           {{ link.label }}
         </a>
 
-        <Button > Contact Me </Button>
+        <Button> Contact Me </Button>
       </div>
     </div>
   </header>
