@@ -68,6 +68,11 @@ onUnmounted(() => {
           v-for="link in navLinks"
           :key="link.href"
           :href="link.href"
+          @click="
+            () => {
+              isMobileMenuOpen = false
+            }
+          "
           class="text-lg text-muted-foreground hover:text-foreground py-2"
         >
           {{ link.label }}

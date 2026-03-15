@@ -9,27 +9,28 @@ type SocialMedia = {
   href: string
 }
 const skills = [
+  'Go',
+  'Gorm',
   'TypeScript',
   'Node.js',
   'Nest.js',
-  'Vue',
-  'React',
-  'React Native',
-  'Flutter',
   'API REST',
+  'Java/Kotlin',
+  'Spring',
   'PostgreSQL',
   'MySQL',
-  'Vercel',
   'MongoDB',
-  'Go',
-  'Gorm',
+  'AWS',
+  'Vercel',
+  'Git',
+  'Linux',
+  'React',
+  'Vue',
+  'React Native',
+  'Flutter',
   'Tailwind CSS',
   'Shadcn',
   'Bootstrap',
-  'AWS',
-  'Java/Kotlin',
-  'Spring',
-  'Git',
 ]
 const dotsArray = ref(
   Array.from({ length: 30 }, () => ({
@@ -108,7 +109,7 @@ const skillsRef = ref([...skills, ...skills])
               <ArrowRight class="w-5 h-5" />
             </Button>
 
-            <AnimatedBorderButton>
+            <AnimatedBorderButton typeLink="Y">
               Download CV
               <Download class="w-5 h-5" />
             </AnimatedBorderButton>
