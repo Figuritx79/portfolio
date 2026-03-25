@@ -42,8 +42,7 @@ const contacts = ref<Contact[]>([
 const formData = ref<FormContact>({ email: '', message: '', name: '' })
 const isLoading = ref<boolean>(false)
 const submitStatus = ref<SubmitStatus>({ type: null, message: '' })
-const handleSubmit = async (event) => {
-  event.preventDefault()
+const handleSubmit = async () => {
   isLoading.value = true
   submitStatus.value = { type: null, message: '' }
   try {
