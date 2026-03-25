@@ -105,7 +105,7 @@ const skillsRef = ref([...skills, ...skills])
           <!-- CTAS -->
           <div class="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
             <Button size="large">
-              Contact Me
+              <a href="#contact"> Contact Me </a>
               <ArrowRight class="w-5 h-5" />
             </Button>
 
