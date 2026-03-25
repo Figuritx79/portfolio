@@ -15,7 +15,7 @@ type Project = {
 const projects = ref<Project[]>([
   {
     title: 'Anonymous chat',
-    description: 'Here i need a description',
+    description: 'In process...',
     image: '/projects/project-1.png',
     tag: ['go', 'vue', 'typescript'],
     link: '#',
@@ -25,7 +25,15 @@ const projects = ref<Project[]>([
     title: 'Home Drive',
     description: ' Here i need a description',
     image: '/projects/project-1.png',
-    tag: [''],
+    tag: ['go', 'vue'],
+    link: '#',
+    github: '#',
+  },
+  {
+    title: 'My Blockchain',
+    description: 'IN process...',
+    image: '/projects/project-1.png',
+    tag: ['rust', 'vue'],
     link: '#',
     github: '#',
   },

@@ -20,7 +20,7 @@ const clasess = computed(
 </script>
 
 <template>
-  <button :class="clasess">
+  <button :class="clasess" v-bind="$attrs">
     <span class="relative flex items-center justify-center gap-2">
       <slot />
     </span>

@@ -72,7 +72,11 @@ const highlights = ref<Highlight[]>([
           </div>
 
           <div class="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
-            <p class="text-lg font-medium italic text-foreground"></p>
+            <p class="text-lg font-medium italic text-foreground">
+              My mission is to build high-quality software through efficient use of resources,
+              creating systems that are fast, scalable, and easy to extend — solutions that are
+              reliable in production and simple for developers to maintain.
+            </p>
           </div>
         </div>
         <!-- Right column -->

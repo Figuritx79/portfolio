@@ -21,15 +21,6 @@ const expirences = ref<Expirence[]>([
     current: true,
   },
   {
-    period: 'Aug 2024 - Dec 2024',
-    role: 'Mobile Application Developer',
-    company: 'G-Smart (ProAqua Contract)',
-    description:
-      'Developed a mobile application using Flutter with an offline-first architecture. Implemented local storage using SQLite and batch synchronization with backend services while optimizing performance and data handling.',
-    technologies: ['Flutter', 'SQLite', 'Mobile Development'],
-    current: false,
-  },
-  {
     period: '2023 - Present',
     role: 'Backend Developer',
     company: 'Personal Projects',
@@ -37,6 +28,15 @@ const expirences = ref<Expirence[]>([
       'Building personal backend projects to explore system design, APIs, authentication, and performance optimization. Experimenting with different technologies and architectures while continuously improving my engineering skills.',
     technologies: ['Go', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker', 'Linux'],
     current: true,
+  },
+  {
+    period: 'Aug 2024 - Dec 2024',
+    role: 'Mobile Application Developer',
+    company: 'G-Smart (ProAqua Contract)',
+    description:
+      'Developed a mobile application using Flutter with an offline-first architecture. Implemented local storage using SQLite and batch synchronization with backend services while optimizing performance and data handling.',
+    technologies: ['Flutter', 'SQLite', 'Mobile Development'],
+    current: false,
   },
 ])
 </script>
@@ -64,8 +64,61 @@ const expirences = ref<Expirence[]>([
         </p>
       </div>
 
+      <!-- Timeline -->
       <div class="relative">
-        <div class="timeline-glow" />
+        <div
+          class="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]"
+        />
+
+        <!-- Experience items -->
+        <div class="space-y-12">
+          <div
+            v-for="(experience, idx) in expirences"
+            :key="idx"
+            class="relative grid md:grid-cols-2 gap-8 animate-fade-in"
+            :style="{ animationDelay: `${(idx + 1) * 150}ms` }"
+          >
+            <!-- Timeline dot -->
+            <div
+              class="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10"
+            >
+              <span
+                v-if="experience.current"
+                class="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"
+              ></span>
+            </div>
+
+            <!-- Content -->
+            <div
+              :class="{
+                'md:pr-16': idx % 2 === 0,
+                'md:text-right': idx % 2 === 0,
+                'md:col-start-2': idx % 2 !== 0,
+                'pl-16': idx % 2 !== 0,
+                'pl-8': true,
+                'md:pl-0': true,
+              }"
+            >
+              <div
+                class="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500"
+              >
+                <span class="text-sm text-primary font-medium">{{ experience.period }}</span>
+                <h3 class="text-xl font-semibold mt-2">{{ experience.role }}</h3>
+                <p class="text-muted-foreground">{{ experience.company }}</p>
+                <p class="text-sm text-muted-foreground mt-4">{{ experience.description }}</p>
+                <div class="flex flex-wrap gap-3 mt-4" :class="{ 'md:justify-end': idx % 2 === 0 }">
+                  <span
+                    v-for="(tech, idxTech) in experience.technologies"
+                    :key="idxTech"
+                    class="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground"
+                  >
+                    {{ tech }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
