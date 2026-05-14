@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@emailjs/browser':
-        specifier: ^4.4.1
+        specifier: 4.4.1
         version: 4.4.1
       '@tailwindcss/vite':
         specifier: 4.2.1
