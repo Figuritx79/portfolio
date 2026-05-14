@@ -50,7 +50,7 @@ onUnmounted(() => {
       </div>
       <!-- CTA BUTTON -->
       <div>
-        <Button size="sm" class-name="hidden md:block"> Contact Me </Button>
+        <Button size="sm" class-name="hidden md:block" is-link link="#contact"> Contact Me </Button>
       </div>
       <!-- Mobile Button -->
       <button
@@ -78,7 +78,7 @@ onUnmounted(() => {
           {{ link.label }}
         </a>
 
-        <Button> Contact Me </Button>
+        <Button is-link link="#contact"> Contact Me </Button>
       </div>
     </div>
   </header>

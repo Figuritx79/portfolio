@@ -1,11 +1,17 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-// defineProps(['className','size', 'children'])
+import { computed, onMounted } from 'vue'
 
-const props = defineProps<{
-  className?: string
-  size?: 'sm' | 'default' | 'large'
-}>()
+const props = withDefaults(
+  defineProps<{
+    className?: string
+    size?: 'sm' | 'default' | 'large'
+    isLink?: boolean
+    link?: string
+  }>(),
+  {
+    isLink: false,
+  },
+)
 
 const basesClasses =
   'relative overflow-hidden rounded-full font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/25'
@@ -20,7 +26,12 @@ const clasess = computed(
 </script>
 
 <template>
-  <button :class="clasess" v-bind="$attrs">
+  <a :href="props.link" v-if="props.isLink" :class="clasess" v-bind="$attrs">
+    <span>
+      <slot />
+    </span>
+  </a>
+  <button :class="clasess" v-bind="$attrs" v-else>
     <span class="relative flex items-center justify-center gap-2">
       <slot />
     </span>

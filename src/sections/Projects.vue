@@ -17,7 +17,7 @@ const projects = ref<Project[]>([
     title: 'Anonymous chat',
     description: 'In process...',
     image: '/projects/project-1.png',
-    tag: ['go', 'vue', 'typescript'],
+    tag: ['go', 'tui'],
     link: '#',
     github: '#',
   },
@@ -25,15 +25,16 @@ const projects = ref<Project[]>([
     title: 'Kira Url',
     description: 'URL Shortener. In process...',
     image: '/projects/project-1.png',
-    tag: ['go', 'vue', 'git', 'cli'],
-    link: '#',
-    github: '#',
+    tag: ['go', 'git', 'cli', 'freecache', 'gorm', 'postgresql', 'vue', 'typescript'],
+    link: '',
+    // TODO: Use the shorter url
+    github: 'https://github.com/Figuritx79/kira-url',
   },
   {
-    title: 'My Blockchain',
-    description: 'In process...',
+    title: 'UpEvent',
+    description: 'Event management system...',
     image: '/projects/project-1.png',
-    tag: ['rust', 'vue'],
+    tag: ['.Net', 'c#', 'vue'],
     link: '#',
     github: '#',
   },
@@ -85,6 +86,7 @@ const projects = ref<Project[]>([
             >
               <a
                 :href="project.link"
+                target="_blank"
                 class="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
               >
                 <ArrowUpRight class="w-5 h-5" />
@@ -92,6 +94,7 @@ const projects = ref<Project[]>([
 
               <a
                 :href="project.github"
+                target="_blank"
                 class="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
               >
                 <Github class="w-5 h-5" />
