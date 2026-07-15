@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import AnimatedBorderButton from '@/components/AnimatedBorderButton.vue'
 import { ArrowUpRight, Github } from 'lucide-vue-next'
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 type Project = {
   title: string
@@ -12,18 +15,18 @@ type Project = {
   github: string
 }
 
-const projects = ref<Project[]>([
+const projects = computed<Project[]>(() => [
   {
-    title: 'Anonymous chat',
-    description: 'In process...',
+    title: t('projects.project1Title'),
+    description: t('projects.project1Description'),
     image: '/projects/project-1.png',
     tag: ['go', 'tui'],
     link: '#',
     github: '#',
   },
   {
-    title: 'Kira Url',
-    description: 'URL Shortener. In process...',
+    title: t('projects.project2Title'),
+    description: t('projects.project2Description'),
     image: '/projects/project-1.png',
     tag: ['go', 'git', 'cli', 'freecache', 'gorm', 'postgresql', 'vue', 'typescript'],
     link: '',
@@ -31,8 +34,8 @@ const projects = ref<Project[]>([
     github: 'https://github.com/Figuritx79/kira-url',
   },
   {
-    title: 'UpEvent',
-    description: 'Event management system...',
+    title: t('projects.project3Title'),
+    description: t('projects.project3Description'),
     image: '/projects/project-1.png',
     tag: ['.Net', 'c#', 'vue'],
     link: '#',
@@ -50,17 +53,18 @@ const projects = ref<Project[]>([
       <div class="text-center mx-auto max-w-3xl mb-16">
         <span
           class="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in"
-          >Featured Work</span
+          >{{ t('projects.sectionTitle') }}</span
         >
         <h2
           class="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-200 text-secondary-foreground"
         >
-          Things I've
-          <span class="font-serif italic font-normal text-white">engineered.</span>
+          {{ t('projects.headingPart1') }}
+          <span class="font-serif italic font-normal text-white">{{
+            t('projects.headingPart2')
+          }}</span>
         </h2>
         <p class="text-muted-foreground animate-fade-in animation-delay-200">
-          A few things I've built while exploring backend development, system design, and software
-          engineering.
+          {{ t('projects.description') }}
         </p>
       </div>
       <!-- Projects grid -->
@@ -128,7 +132,7 @@ const projects = ref<Project[]>([
       <!-- View all CTA -->
       <div class="text-center mt-12 animate-fade-in animation-delay-500">
         <AnimatedBorderButton typeLink="N">
-          View All Projects
+          {{ t('projects.viewAll') }}
           <ArrowUpRight class="w-5 h-5" />
         </AnimatedBorderButton>
       </div>

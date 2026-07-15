@@ -1,0 +1,107 @@
+{
+  "common": {
+    "contactMe": "Contáctame",
+    "selectLanguage": "Seleccionar idioma"
+  },
+  "navbar": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "experience": "Experiencia"
+  },
+  "hero": {
+    "badge": "Ingeniero de Software • Especialista en Backend",
+    "designing": "Diseñando",
+    "api": "APIs",
+    "andSystems": "y sistemas",
+    "thatScale": "que escalan.",
+    "intro": "Hola, soy Enrique Hernández — ingeniero backend enfocado en construir APIs escalables, servicios eficientes y arquitecturas de sistemas confiables.",
+    "downloadCv": "Descargar CV",
+    "followMe": "Sígueme",
+    "profileAlt": "Juan Enrique Gonzalez Hernandez",
+    "availableForWork": "Disponible para trabajar",
+    "technologiesTitle": "Tecnologías con las que trabajo",
+    "scroll": "Desplázate",
+    "heroImageAlt": "Imagen de portada"
+  },
+  "about": {
+    "sectionTitle": "Sobre mí",
+    "headingPart1": "Construyendo el futuro,",
+    "headingPart2": "un componente a la vez",
+    "paragraph1": "Soy un ingeniero de software apasionado por entender cómo funcionan los sistemas internamente y experimentar para replicarlos o mejorarlos. Disfruto explorar el funcionamiento interno de las tecnologías y convertir esa curiosidad en soluciones prácticas.",
+    "paragraph2": "Me especializo principalmente en desarrollo backend, diseñando APIs escalables y servicios confiables. Cuando es necesario, también trabajo a lo largo del stack utilizando tecnologías como Go, TypeScript, Vue y React para ofrecer soluciones completas.",
+    "paragraph3": "Estoy particularmente interesado en conceptos de bajo nivel, rendimiento y optimización, y aprendo constantemente para profundizar mi comprensión de cómo operan los sistemas. Fuera de la programación, disfruto jugar videojuegos de un jugador y espero comenzar a contribuir a proyectos de código abierto en un futuro cercano.",
+    "mission": "Mi misión es construir software de alta calidad mediante el uso eficiente de los recursos, creando sistemas que sean rápidos, escalables y fáciles de extender — soluciones confiables en producción y sencillas para que los desarrolladores las mantengan.",
+    "highlightCleanCode": "Código Limpio",
+    "highlightCleanCodeDesc": "Escribir código mantenible y escalable que resista la prueba del tiempo",
+    "highlightPerformance": "Rendimiento",
+    "highlightPerformanceDesc": "Optimizar para velocidad y ofrecer sistemas ultrarrápidos",
+    "highlightCollaboration": "Colaboración",
+    "highlightCollaborationDesc": "Trabajar estrechamente con equipos para hacer realidad las ideas",
+    "highlightContinuousLearning": "Aprendizaje Continuo ",
+    "highlightContinuousLearningDesc": "Impulsado por la curiosidad de entender cómo funcionan las tecnologías internamente y aplicar ese conocimiento para construir mejores sistemas."
+  },
+  "experience": {
+    "sectionTitle": "Trayectoria Profesional",
+    "headingPart1": "La experiencia",
+    "headingPart2": "habla por sí sola.",
+    "description": "Una línea de tiempo de mi experiencia profesional construyendo software, enfocada principalmente en desarrollo backend y diseño de sistemas.",
+    "items": {
+      "item1": {
+        "period": "Ene 2025 - Actualidad",
+        "role": "Desarrollador Fullstack de Software",
+        "company": "G-Smart (Contrato GConta)",
+        "description": "Diseñando y desarrollando un sistema contable enfocado en rendimiento. Creando servicios backend y APIs con Go, optimizando el rendimiento del sistema y diseñando esquemas de base de datos y componentes del sistema eficientes."
+      },
+      "item2": {
+        "period": "2023 - Actualidad",
+        "role": "Desarrollador Backend",
+        "company": "Proyectos Personales",
+        "description": "Creando proyectos backend personales para explorar diseño de sistemas, APIs, autenticación y optimización de rendimiento. Experimentando con diferentes tecnologías y arquitecturas mientras mejoro continuamente mis habilidades de ingeniería."
+      },
+      "item3": {
+        "period": "Ago 2024 - Dic 2024",
+        "role": "Desarrollador de Aplicaciones Móviles",
+        "company": "G-Smart (Contrato ProAqua)",
+        "description": "Desarrollé una aplicación móvil usando Flutter con una arquitectura offline-first. Implementé almacenamiento local mediante SQLite y sincronización por lotes con servicios backend, optimizando el rendimiento y el manejo de datos."
+      }
+    }
+  },
+  "projects": {
+    "sectionTitle": "Trabajo Destacado",
+    "headingPart1": "Cosas que he",
+    "headingPart2": "ingeniado.",
+    "description": "Algunas cosas que he construido mientras exploro desarrollo backend, diseño de sistemas e ingeniería de software.",
+    "viewAll": "Ver Todos los Proyectos",
+    "project1Title": "Anonymous chat",
+    "project1Description": "En proceso...",
+    "project2Title": "Kira Url",
+    "project2Description": "Acortador de URLs. En proceso...",
+    "project3Title": "UpEvent",
+    "project3Description": "Sistema de gestión de eventos..."
+  },
+  "contant": {
+    "sectionTitle": "Ponte en Contacto",
+    "headingPart1": "Construyamos",
+    "headingPart2": "algo grande.",
+    "description": "¿Tienes un proyecto en mente? Me encantaría conocerlo. Envíame un mensaje y hablemos de cómo podemos trabajar juntos.",
+    "formLabelName": "Nombre",
+    "formPlaceholderName": "Tu nombre...",
+    "formLabelEmail": "Correo electrónico",
+    "formPlaceholderEmail": "tucorreo.com",
+    "formLabelMessage": "Mensaje",
+    "formPlaceholderMessage": "Tu mensaje...",
+    "sending": "Enviando...",
+    "sendMessage": "Enviar Mensaje",
+    "successMessage": "¡Mensaje enviado con éxito! Te responderé pronto.",
+    "errorMessage": "No se pudo enviar el mensaje. Inténtalo de nuevo más tarde.",
+    "contactInfoTitle": "Información de Contacto",
+    "contactLabelEmail": "Correo electrónico",
+    "contactValueEmail": "gonherenrique.com",
+    "contactLabelPhone": "Teléfono",
+    "contactValuePhone": "+52 777-467-0429",
+    "contactLabelLocation": "Ubicación",
+    "contactValueLocation": "Morelos, MX",
+    "availableTitle": "Actualmente Disponible",
+    "availableDescription": "Actualmente estoy abierto a nuevas oportunidades y proyectos emocionantes. Ya sea que necesites un ingeniero a tiempo completo o un freelancer, ¡hablemos!"
+  }
+}

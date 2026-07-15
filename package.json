@@ -16,10 +16,12 @@
   },
   "dependencies": {
     "@emailjs/browser": "4.4.1",
+    "@intlify/unplugin-vue-i18n": "^11.2.4",
     "@tailwindcss/vite": "4.2.1",
     "lucide-vue-next": "0.575.0",
     "tailwindcss": "4.2.1",
-    "vue": "3.5.29"
+    "vue": "3.5.29",
+    "vue-i18n": "^11.4.6"
   },
   "devDependencies": {
     "@tsconfig/node24": "24.0.4",

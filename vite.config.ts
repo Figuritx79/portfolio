@@ -4,12 +4,17 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
+import { resolve } from 'node:path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
-    tailwindcss()
+    tailwindcss(),
+    VueI18nPlugin({
+      include: resolve(fileURLToPath(new URL('./src/i18n/locales/*.json', import.meta.url))), // provide a path to the folder where you'll store translation data (see below)
+    })
   ],
   resolve: {
     alias: {

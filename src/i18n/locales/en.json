@@ -1,0 +1,107 @@
+{
+  "common": {
+    "contactMe": "Contact Me",
+    "selectLanguage": "Select language"
+  },
+  "navbar": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience"
+  },
+  "hero": {
+    "badge": "Software Engineer • Backend Specialist",
+    "designing": "Designing",
+    "api": "APIs",
+    "andSystems": "and systems",
+    "thatScale": "that scale.",
+    "intro": "Hi, I'm Enrique Hernandez - — a backend engineer focused on building scalable APIs, efficient services, and reliable system architectures.",
+    "downloadCv": "Download CV",
+    "followMe": "Follow me",
+    "profileAlt": "Juan Enrique Gonzalez Hernandez",
+    "availableForWork": "Available for work",
+    "technologiesTitle": "Tecnologies I work with",
+    "scroll": "Scroll",
+    "heroImageAlt": "Hero image"
+  },
+  "about": {
+    "sectionTitle": "About me",
+    "headingPart1": "Building the future,",
+    "headingPart2": "one component at a time",
+    "paragraph1": "I'm a software engineer passionate about understanding how systems work under the hood and experimenting to replicate or improve them. I enjoy exploring the inner workings of technologies and turning that curiosity into practical solutions.",
+    "paragraph2": "I specialize primarily in backend development, designing scalable APIs and reliable services. When needed, I also work across the stack using technologies like Go, TypeScript, Vue, and React to deliver complete solutions.",
+    "paragraph3": "I'm particularly interested in low-level concepts, performance, and optimization, and I'm constantly learning to deepen my understanding of how systems operate. Outside of coding, I enjoy playing single-player video games and hope to start contributing to open-source projects in the near future.",
+    "mission": "My mission is to build high-quality software through efficient use of resources, creating systems that are fast, scalable, and easy to extend — solutions that are reliable in production and simple for developers to maintain.",
+    "highlightCleanCode": "Clean Code",
+    "highlightCleanCodeDesc": "Writing maintainable, scalable code that stands the test of time",
+    "highlightPerformance": "Performance",
+    "highlightPerformanceDesc": "Optimizing for speed and delivering lightning-fast systems",
+    "highlightCollaboration": "Collaboration",
+    "highlightCollaborationDesc": "Working closely with teams to bring ideas to life",
+    "highlightContinuousLearning": "Continues Learning ",
+    "highlightContinuousLearningDesc": "Driven by curiosity to understand how technologies work internally and apply that knowledge to build better systems."
+  },
+  "experience": {
+    "sectionTitle": "Carrer Journey",
+    "headingPart1": "Experience",
+    "headingPart2": "speaks volumes.",
+    "description": "A timeline of my professional experience building software, focusing primarily on backend development and system design.",
+    "items": {
+      "item1": {
+        "period": "Jan 2025 - Present",
+        "role": "Fullstack Software Developer",
+        "company": "G-Smart (GConta Contract)",
+        "description": "Designing and developing a performance-focused accounting system. Building backend services and APIs using Go, optimizing system performance, and designing efficient database schemas and system components."
+      },
+      "item2": {
+        "period": "2023 - Present",
+        "role": "Backend Developer",
+        "company": "Personal Projects",
+        "description": "Building personal backend projects to explore system design, APIs, authentication, and performance optimization. Experimenting with different technologies and architectures while continuously improving my engineering skills."
+      },
+      "item3": {
+        "period": "Aug 2024 - Dec 2024",
+        "role": "Mobile Application Developer",
+        "company": "G-Smart (ProAqua Contract)",
+        "description": "Developed a mobile application using Flutter with an offline-first architecture. Implemented local storage using SQLite and batch synchronization with backend services while optimizing performance and data handling."
+      }
+    }
+  },
+  "projects": {
+    "sectionTitle": "Featured Work",
+    "headingPart1": "Things I've",
+    "headingPart2": "engineered.",
+    "description": "A few things I've built while exploring backend development, system design, and software engineering.",
+    "viewAll": "View All Projects",
+    "project1Title": "Anonymous chat",
+    "project1Description": "In process...",
+    "project2Title": "Kira Url",
+    "project2Description": "URL Shortener. In process...",
+    "project3Title": "UpEvent",
+    "project3Description": "Event management system..."
+  },
+  "contant": {
+    "sectionTitle": "Get In Touch",
+    "headingPart1": "Let's build",
+    "headingPart2": "something great.",
+    "description": "Have a project in mind? I'd love to hear about it. Send me a message and let's discuss how we can work together.",
+    "formLabelName": "Name",
+    "formPlaceholderName": "Your name...",
+    "formLabelEmail": "Email",
+    "formPlaceholderEmail": "youremail.com",
+    "formLabelMessage": "Message",
+    "formPlaceholderMessage": "Your message...",
+    "sending": "Sending...",
+    "sendMessage": "Send Message",
+    "successMessage": "Message sent successfully! I'll get back to you soon.",
+    "errorMessage": "Failed to send message. Please try again later.",
+    "contactInfoTitle": "Contact Information",
+    "contactLabelEmail": "Email",
+    "contactValueEmail": "gonherenrique.com",
+    "contactLabelPhone": "Phone",
+    "contactValuePhone": "+52 777-467-0429",
+    "contactLabelLocation": "Location",
+    "contactValueLocation": "Morelos, MX",
+    "availableTitle": "Currently Available",
+    "availableDescription": "I'm currently open to new opportunities and exciting projects. Whether you need a full-time engineer or a freelance, let's talk!"
+  }
+}

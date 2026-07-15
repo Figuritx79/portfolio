@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Component } from 'vue'
+import { useI18n } from 'vue-i18n'
 import Button from '@/components/Button.vue'
 import AnimatedBorderButton from '@/components/AnimatedBorderButton.vue'
 import { ArrowRight, Download, Github, ChevronDown } from 'lucide-vue-next'
+
+const { t } = useI18n()
 type SocialMedia = {
   icon: Component
   href: string
@@ -53,7 +56,11 @@ const skillsRef = ref([...skills, ...skills])
 <template>
   <section className="relative min-h-screen flex items-center overflow-hidden">
     <div className="absolute inset-0">
-      <img src="/hero-bg.jpg" alt="Hero image" className="w-full h-full object-cover opacity-40" />
+      <img
+        src="/hero-bg.jpg"
+        :alt="t('hero.heroImageAlt')"
+        className="w-full h-full object-cover opacity-40"
+      />
       <div
         className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background"
       />
@@ -83,7 +90,7 @@ const skillsRef = ref([...skills, ...skills])
               class="inline-flex gap-2 px-4 py-2 items-center glass text-sm text-primary rounded-full"
             >
               <span class="w-2 bg-primary rounded-full h-2 animate-pulse" />
-              Software Engineer • Backend Specialist
+              {{ t('hero.badge') }}
             </span>
           </div>
           <!-- Headline -->
@@ -91,32 +98,34 @@ const skillsRef = ref([...skills, ...skills])
             <h1
               className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100"
             >
-              Designing <span className="text-primary glow-text">APIs</span>
+              {{ t('hero.designing') }}
+              <span className="text-primary glow-text">{{ t('hero.api') }}</span>
               <br />
-              and systems
+              {{ t('hero.andSystems') }}
               <br />
-              <span className="font-serif italic font-normal text-white"> that scale. </span>
+              <span className="font-serif italic font-normal text-white">{{
+                t('hero.thatScale')
+              }}</span>
             </h1>
             <p class="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-              Hi, I'm Enrique Hernandez - — a backend engineer focused on building scalable APIs,
-              efficient services, and reliable system architectures.
+              {{ t('hero.intro') }}
             </p>
           </div>
           <!-- CTAS -->
           <div class="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
             <Button size="large">
-              <a href="#contact"> Contact Me </a>
+              <a href="#contact">{{ t('common.contactMe') }}</a>
               <ArrowRight class="w-5 h-5" />
             </Button>
 
             <AnimatedBorderButton typeLink="Y">
-              Download CV
+              {{ t('hero.downloadCv') }}
               <Download class="w-5 h-5" />
             </AnimatedBorderButton>
           </div>
           <!-- Social link -->
           <div class="flex items-center gap-4 animate-fade-in animation-delay-400">
-            <span class="text-sm text-muted-foreground">Follow me</span>
+            <span class="text-sm text-muted-foreground">{{ t('hero.followMe') }}</span>
             <a
               v-for="(social, idx) in socialMediaLinks"
               :key="idx"
@@ -137,14 +146,14 @@ const skillsRef = ref([...skills, ...skills])
             <div class="relative glass rounded-3xl p-2 glow-border">
               <img
                 src="/profile.png"
-                alt="Juan Enrique Gonzalez Hernandez"
+                :alt="t('hero.profileAlt')"
                 class="w-full aspect-4/5 object-cover rounded-3xl"
               />
               <!-- Floating badge -->
               <div class="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                  <span class="text-sm font-medium">Available for work</span>
+                  <span class="text-sm font-medium">{{ t('hero.availableForWork') }}</span>
                 </div>
               </div>
             </div>
@@ -153,7 +162,9 @@ const skillsRef = ref([...skills, ...skills])
       </div>
       <!-- Skills -->
       <div class="mt-20 animate-fade-in animation-delay-600">
-        <p class="text-sm text-muted-foreground mb-6 text-center">Tecnologies I work with</p>
+        <p class="text-sm text-muted-foreground mb-6 text-center">
+          {{ t('hero.technologiesTitle') }}
+        </p>
         <div class="relative overflow-hidden">
           <div class="flex animate-marquee">
             <div v-for="(skill, idx) in skillsRef" :key="idx" class="shrink-0 px-8 py-4">
@@ -171,7 +182,7 @@ const skillsRef = ref([...skills, ...skills])
         href="#about"
         class="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
       >
-        <span class="text-xs uppercase tracking-wider">Scroll</span>
+        <span class="text-xs uppercase tracking-wider">{{ t('hero.scroll') }}</span>
         <ChevronDown class="w-6 h-6 animate-bounce" />
       </a>
     </div>

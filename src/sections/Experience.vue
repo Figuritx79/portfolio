@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-type Expirence = {
+const { t } = useI18n()
+
+type Experience = {
   period: string
   role: string
   company: string
@@ -10,31 +13,28 @@ type Expirence = {
   current: boolean
 }
 
-const expirences = ref<Expirence[]>([
+const experiences = computed<Experience[]>(() => [
   {
-    period: 'Jan 2025 - Present',
-    role: 'Fullstack Software Developer',
-    company: 'G-Smart (GConta Contract)',
-    description:
-      'Designing and developing a performance-focused accounting system. Building backend services and APIs using Go, optimizing system performance, and designing efficient database schemas and system components.',
+    period: t('experience.items.item1.period'),
+    role: t('experience.items.item1.role'),
+    company: t('experience.items.item1.company'),
+    description: t('experience.items.item1.description'),
     technologies: ['Go', 'REST APIs', 'PostgreSQL', 'Docker'],
     current: true,
   },
   {
-    period: '2023 - Present',
-    role: 'Backend Developer',
-    company: 'Personal Projects',
-    description:
-      'Building personal backend projects to explore system design, APIs, authentication, and performance optimization. Experimenting with different technologies and architectures while continuously improving my engineering skills.',
+    period: t('experience.items.item2.period'),
+    role: t('experience.items.item2.role'),
+    company: t('experience.items.item2.company'),
+    description: t('experience.items.item2.description'),
     technologies: ['Go', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker', 'Linux'],
     current: true,
   },
   {
-    period: 'Aug 2024 - Dec 2024',
-    role: 'Mobile Application Developer',
-    company: 'G-Smart (ProAqua Contract)',
-    description:
-      'Developed a mobile application using Flutter with an offline-first architecture. Implemented local storage using SQLite and batch synchronization with backend services while optimizing performance and data handling.',
+    period: t('experience.items.item3.period'),
+    role: t('experience.items.item3.role'),
+    company: t('experience.items.item3.company'),
+    description: t('experience.items.item3.description'),
     technologies: ['Flutter', 'SQLite', 'Mobile Development'],
     current: false,
   },
@@ -50,17 +50,19 @@ const expirences = ref<Expirence[]>([
       <div class="max-w-3xl mb-16">
         <span
           class="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in"
-          >Carrer Journey</span
+          >{{ t('experience.sectionTitle') }}</span
         >
         <h2
           class="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground"
         >
-          Experience <span class="font-serif italic font-normal text-white">speaks volumes.</span>
+          {{ t('experience.headingPart1') }}
+          <span class="font-serif italic font-normal text-white">{{
+            t('experience.headingPart2')
+          }}</span>
         </h2>
 
         <p class="text-muted-foreground animate-fade-in animation-delay-200">
-          A timeline of my professional experience building software, focusing primarily on backend
-          development and system design.
+          {{ t('experience.description') }}
         </p>
       </div>
 
@@ -73,7 +75,7 @@ const expirences = ref<Expirence[]>([
         <!-- Experience items -->
         <div class="space-y-12">
           <div
-            v-for="(experience, idx) in expirences"
+            v-for="(experience, idx) in experiences"
             :key="idx"
             class="relative grid md:grid-cols-2 gap-8 animate-fade-in"
             :style="{ animationDelay: `${(idx + 1) * 150}ms` }"

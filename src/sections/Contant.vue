@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import Button from '@/components/Button.vue'
 import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from 'lucide-vue-next'
-import { ref, type Component } from 'vue'
+import { computed, ref, type Component } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { send } from '@emailjs/browser'
+
+const { t } = useI18n()
 type FormContact = {
   name: string
   email: string
@@ -19,23 +22,23 @@ type SubmitStatus = {
   type: 'success' | 'error' | null
   message: string
 }
-const contacts = ref<Contact[]>([
+const contacts = computed<Contact[]>(() => [
   {
     icon: Mail,
-    label: 'Email',
-    value: 'gonherenrique.com',
+    label: t('contant.contactLabelEmail'),
+    value: t('contant.contactValueEmail'),
     href: 'mailto:emali.com',
   },
   {
     icon: Phone,
-    label: 'Phone',
-    value: '+52 777-467-0429',
+    label: t('contant.contactLabelPhone'),
+    value: t('contant.contactValuePhone'),
     href: 'tel:+527774670429',
   },
   {
     icon: MapPin,
-    label: 'Location',
-    value: 'Morelos, MX',
+    label: t('contant.contactLabelLocation'),
+    value: t('contant.contactValueLocation'),
     href: '#',
   },
 ])
@@ -64,7 +67,7 @@ const handleSubmit = async () => {
     )
     submitStatus.value = {
       type: 'success',
-      message: `Message sent successfully! I'll get back to you soon.`,
+      message: t('contant.successMessage'),
     }
     formData.value = {
       message: '',
@@ -74,8 +77,8 @@ const handleSubmit = async () => {
   } catch (error) {
     console.error('EmailJS error', error)
     submitStatus.value = {
-      type: 'success',
-      message: 'Failed to send message. Please try again later.',
+      type: 'error',
+      message: t('contant.errorMessage'),
     }
   } finally {
     isLoading.value = false
@@ -93,39 +96,44 @@ const handleSubmit = async () => {
         <span
           class="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in"
         >
-          Get In Touch
+          {{ t('contant.sectionTitle') }}
         </span>
         <h2
           class="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground"
         >
-          Let's build
-          <span class="font-serif italic font-normal text-white"> something great. </span>
+          {{ t('contant.headingPart1') }}
+          <span class="font-serif italic font-normal text-white">{{
+            t('contant.headingPart2')
+          }}</span>
         </h2>
         <p class="text-muted-foreground animate-fade-in animation-delay-200">
-          Have a project in mind? I'd love to hear about it. Send me a message and let's discuss how
-          we can work together.
+          {{ t('contant.description') }}
         </p>
       </div>
       <div class="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
         <div class="glass p-8 rounded-3xl border-primary/30 animate-fade-in animation-delay-300">
           <form class="space-y-6" @submit.prevent="handleSubmit">
             <div>
-              <label for="name" class="block text-sm font-medium mb-2">Name</label>
+              <label for="name" class="block text-sm font-medium mb-2">{{
+                t('contant.formLabelName')
+              }}</label>
               <input
                 v-model.trim="formData.name"
                 type="text"
                 id="name"
                 required
-                placeholder="Your name..."
+                :placeholder="t('contant.formPlaceholderName')"
                 class="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
               />
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium mb-2">Email</label>
+              <label for="email" class="block text-sm font-medium mb-2">{{
+                t('contant.formLabelEmail')
+              }}</label>
               <input
                 v-model.trim="formData.email"
                 required
-                placeholder="your@email.com"
+                :placeholder="t('contant.formPlaceholderEmail')"
                 type="email"
                 name=""
                 id="email"
@@ -134,13 +142,15 @@ const handleSubmit = async () => {
             </div>
 
             <div>
-              <label for="message" class="block text-sm font-medium mb-2">Message</label>
+              <label for="message" class="block text-sm font-medium mb-2">{{
+                t('contant.formLabelMessage')
+              }}</label>
               <textarea
                 v-model="formData.message"
                 type="text"
                 required
                 rows="5"
-                placeholder="Your message..."
+                :placeholder="t('contant.formPlaceholderMessage')"
                 id="message"
                 class="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
               />
@@ -150,11 +160,11 @@ const handleSubmit = async () => {
                 <span
                   class="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"
                 ></span>
-                Sending...
+                {{ t('contant.sending') }}
               </template>
 
               <template v-else>
-                Send Message
+                {{ t('contant.sendMessage') }}
                 <Send class="w-5 h-5" />
               </template>
             </Button>
@@ -179,7 +189,7 @@ const handleSubmit = async () => {
         </div>
         <div class="space-y-6 animate-fade-in animation-delay-400">
           <div class="glass rounded-3xl p-8">
-            <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+            <h3 class="text-xl font-semibold mb-6">{{ t('contant.contactInfoTitle') }}</h3>
             <div class="space-y-4">
               <a
                 v-for="(contact, idx) in contacts"
@@ -205,11 +215,10 @@ const handleSubmit = async () => {
           <div className="glass rounded-3xl p-8 border border-primary/30">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-              <span className="font-medium">Currently Available</span>
+              <span className="font-medium">{{ t('contant.availableTitle') }}</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              I'm currently open to new opportunities and exciting projects. Whether you need a
-              full-time engineer or a freelance, let's talk!
+              {{ t('contant.availableDescription') }}
             </p>
           </div>
         </div>

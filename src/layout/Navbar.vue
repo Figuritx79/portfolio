@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import Button from '@/components/Button.vue'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 import { Menu, X } from 'lucide-vue-next'
-const navLinks = ref([
-  { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
+
+const { t } = useI18n()
+
+const navLinks = computed(() => [
+  { href: '#about', label: t('navbar.about') },
+  { href: '#projects', label: t('navbar.projects') },
+  { href: '#experience', label: t('navbar.experience') },
 ])
 const isMobileMenuOpen = ref(false)
 const isScrolled = ref(false)
@@ -48,9 +53,10 @@ onUnmounted(() => {
           </a>
         </div>
       </div>
-      <!-- CTA BUTTON -->
-      <div>
-        <Button size="sm" class-name="hidden md:block" is-link link="#contact"> Contact Me </Button>
+      <!-- Language Switcher + CTA -->
+      <div class="hidden md:flex items-center gap-2">
+        <LanguageSwitcher />
+        <Button size="sm" is-link link="#contact">{{ t('common.contactMe') }}</Button>
       </div>
       <!-- Mobile Button -->
       <button
@@ -78,7 +84,11 @@ onUnmounted(() => {
           {{ link.label }}
         </a>
 
-        <Button is-link link="#contact"> Contact Me </Button>
+        <div class="pt-2 border-t border-border/40">
+          <LanguageSwitcher />
+        </div>
+
+        <Button is-link link="#contact">{{ t('common.contactMe') }}</Button>
       </div>
     </div>
   </header>

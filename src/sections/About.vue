@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { Brain, Code2, Rocket, User } from 'lucide-vue-next'
-import { ref, type Component } from 'vue'
+import { computed, type Component } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 type Highlight = {
   icon: Component
@@ -8,27 +11,26 @@ type Highlight = {
   description: string
 }
 
-const highlights = ref<Highlight[]>([
+const highlights = computed<Highlight[]>(() => [
   {
     icon: Code2,
-    title: 'Clean Code',
-    description: 'Writing maintainable, scalable code that stands the test of time',
+    title: t('about.highlightCleanCode'),
+    description: t('about.highlightCleanCodeDesc'),
   },
   {
     icon: Rocket,
-    title: 'Performance',
-    description: 'Optimizing for speed and delivering lightning-fast systems',
+    title: t('about.highlightPerformance'),
+    description: t('about.highlightPerformanceDesc'),
   },
   {
     icon: User,
-    title: 'Collaboration',
-    description: 'Working closely with teams to bring ideas to life',
+    title: t('about.highlightCollaboration'),
+    description: t('about.highlightCollaborationDesc'),
   },
   {
     icon: Brain,
-    title: 'Continues Learning ',
-    description:
-      'Driven by curiosity to understand how technologies work internally and apply that knowledge to build better systems.',
+    title: t('about.highlightContinuousLearning'),
+    description: t('about.highlightContinuousLearningDesc'),
   },
 ])
 </script>
@@ -39,43 +41,28 @@ const highlights = ref<Highlight[]>([
         <!-- Left column -->
         <div class="space-y-8">
           <div class="animate-fade-in">
-            <span class="text-secondary-foreground text-sm font-medium tracking-wider uppercase"
-              >About me</span
-            >
+            <span class="text-secondary-foreground text-sm font-medium tracking-wider uppercase">{{
+              t('about.sectionTitle')
+            }}</span>
           </div>
 
           <h2
             class="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground"
           >
-            Building the future,
-            <span class="font-serif italic font-normal text-white"> one component at a time</span>
+            {{ t('about.headingPart1') }}
+            <span class="font-serif italic font-normal text-white">{{
+              t('about.headingPart2')
+            }}</span>
           </h2>
           <div class="space-y-4 text-muted-foreground animatate-fade-in animation-delay-200">
-            <p>
-              I'm a software engineer passionate about understanding how systems work under the hood
-              and experimenting to replicate or improve them. I enjoy exploring the inner workings
-              of technologies and turning that curiosity into practical solutions.
-            </p>
-
-            <p>
-              I specialize primarily in backend development, designing scalable APIs and reliable
-              services. When needed, I also work across the stack using technologies like Go,
-              TypeScript, Vue, and React to deliver complete solutions.
-            </p>
-
-            <p>
-              I'm particularly interested in low-level concepts, performance, and optimization, and
-              I'm constantly learning to deepen my understanding of how systems operate. Outside of
-              coding, I enjoy playing single-player video games and hope to start contributing to
-              open-source projects in the near future.
-            </p>
+            <p>{{ t('about.paragraph1') }}</p>
+            <p>{{ t('about.paragraph2') }}</p>
+            <p>{{ t('about.paragraph3') }}</p>
           </div>
 
           <div class="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
             <p class="text-lg font-medium italic text-foreground">
-              My mission is to build high-quality software through efficient use of resources,
-              creating systems that are fast, scalable, and easy to extend — solutions that are
-              reliable in production and simple for developers to maintain.
+              {{ t('about.mission') }}
             </p>
           </div>
         </div>
